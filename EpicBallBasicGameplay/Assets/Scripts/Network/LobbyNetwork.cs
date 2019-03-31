@@ -19,9 +19,11 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
 
         PhotonNetwork.JoinLobby(TypedLobby.Default);
     }
-    public override void OnJoinedRoom()
+    public override void OnJoinedLobby()
     {
         print("Joined Lobby");
+        if(!PhotonNetwork.InRoom)
+        MainCanvasManager.Instance._LCanvas.transform.SetAsLastSibling();
     }
     
 }

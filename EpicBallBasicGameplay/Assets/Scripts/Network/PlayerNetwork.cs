@@ -8,7 +8,7 @@ public class PlayerNetwork : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        PlayerName = "Player#" + Random.Range(1, 5);
+        PlayerName = "RandomPlayer#" + Random.Range(1, 9999);
 
     }
 }

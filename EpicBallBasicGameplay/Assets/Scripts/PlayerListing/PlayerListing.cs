@@ -16,6 +16,7 @@ public class PlayerListing : MonoBehaviour
 
     public void ApplyPhotonPlayer(Photon.Realtime.Player photonPlayer)
     {
+        PhotonPlayer = photonPlayer;
         _PlayerName.text = photonPlayer.NickName;
     }
 }

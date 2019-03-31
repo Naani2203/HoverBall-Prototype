@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,6 +14,14 @@ public class LobbyCanvas : MonoBehaviour
     
     public void OnClickJoinRoom(string RoomName)
     {
+        if(PhotonNetwork.JoinRoom(RoomName))
+        {
 
+        }
+        else
+        {
+            print("Join Room Failed");
+
+        }
     }
 }

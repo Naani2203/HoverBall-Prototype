@@ -1,4 +1,5 @@
 ﻿using Photon.Pun;
+using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,9 +18,14 @@ public class PlayerLayoutGroup : MonoBehaviourPunCallbacks
         get { return _PLayerListings; }
     }
 
-   
+    public override void OnMasterClientSwitched(Player newMasterClient)
+    {
+        base.OnMasterClientSwitched(newMasterClient);
+        //PhotonNetwork.LeaveRoom();
+    }
 
-   public override void OnJoinedRoom()
+
+    public override void OnJoinedRoom()
     {
         MainCanvasManager.Instance.CurrentRoomCanvas.transform.SetAsLastSibling();
         Photon.Realtime.Player[] photonPlayers = PhotonNetwork.PlayerList;
@@ -30,8 +36,15 @@ public class PlayerLayoutGroup : MonoBehaviourPunCallbacks
 
     }
 
+    public override void OnPlayerEnteredRoom(Player photonPlayer)
+    {
+        base.OnPlayerEnteredRoom(photonPlayer);
+        PlayerJoinedRoom(photonPlayer);
+    }
+
     public override void OnPlayerLeftRoom(Photon.Realtime.Player photonPlayer)
     {
+        base.OnPlayerLeftRoom(photonPlayer);
         PlayerLeftRoom(photonPlayer);
     }
 
@@ -61,5 +74,19 @@ public class PlayerLayoutGroup : MonoBehaviourPunCallbacks
             Destroy(_PLayerListings[index].gameObject);
             _PLayerListings.RemoveAt(index);
         }
+    }
+
+    public void OnClickRoomState()
+    {
+        if(!PhotonNetwork.IsMasterClient)
+        {
+            return;
+        }
+        PhotonNetwork.CurrentRoom.IsOpen = !PhotonNetwork.CurrentRoom.IsOpen;
+        PhotonNetwork.CurrentRoom.IsVisible = PhotonNetwork.CurrentRoom.IsOpen;
+    }
+    public void OnClickLeaveRoom()
+    {
+        PhotonNetwork.LeaveRoom();
     }
 }
