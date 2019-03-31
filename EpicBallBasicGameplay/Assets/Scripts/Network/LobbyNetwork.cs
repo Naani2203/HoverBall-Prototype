@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LobbyNetwork : MonoBehaviour
+public class LobbyNetwork : MonoBehaviourPunCallbacks
 {
     // Start is called before the first frame update
     void Start()
@@ -12,17 +12,16 @@ public class LobbyNetwork : MonoBehaviour
         print("Connecting to server");
         PhotonNetwork.ConnectUsingSettings();
     }
-    private void OnConnectedToMaster()
+    public override void OnConnectedToMaster()
     {
         print("connected to master");
         PhotonNetwork.NickName = PlayerNetwork.Instance.PlayerName;
 
         PhotonNetwork.JoinLobby(TypedLobby.Default);
     }
-    private void OnJoinedLobby()
+    public override void OnJoinedRoom()
     {
         print("Joined Lobby");
     }
-
-  
+    
 }
