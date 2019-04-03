@@ -27,6 +27,11 @@ public class PlayerLayoutGroup : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
+
+        foreach(Transform child in transform)
+        {
+            Destroy(child.gameObject);
+        }
         MainCanvasManager.Instance.CurrentRoomCanvas.transform.SetAsLastSibling();
         Photon.Realtime.Player[] photonPlayers = PhotonNetwork.PlayerList;
         for(int i=0; i<photonPlayers.Length;i++)
