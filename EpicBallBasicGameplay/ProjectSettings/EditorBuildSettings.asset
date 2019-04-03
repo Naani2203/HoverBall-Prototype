@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Naani/Main.unity
     guid: 439c7e49d33180d43a79cd4789fc8533
+  - enabled: 1
+    path: Assets/Scenes/Naani/GamePlay.unity
+    guid: faadb966c25bf71479274915ec09f687
   m_configObjects: {}
