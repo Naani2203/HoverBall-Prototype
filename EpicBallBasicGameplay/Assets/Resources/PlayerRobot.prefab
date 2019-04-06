@@ -180,7 +180,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 41}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: b1d37d564fe5b1c4a94cce325c724ac8, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -788,7 +788,7 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 0}
+  m_LookAt: {fileID: 181}
   m_Follow: {fileID: 181}
   m_Lens:
     FieldOfView: 50

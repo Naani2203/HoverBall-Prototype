@@ -35,8 +35,7 @@ public class PlayerNetwork : MonoBehaviour
     }
     private void MasterLoadedGame()
     {
-        //_PhotonView.RPC("RPC_LoadedGameScene", RpcTarget.Others);
-        _PlayersInGame=1;
+        _PhotonView.RPC("RPC_LoadedGameScene", RpcTarget.All);
         _PhotonView.RPC("RPC_LoadGameOthers", RpcTarget.Others);
     }
     private void NonMasterLoadedGame()
@@ -54,6 +53,7 @@ public class PlayerNetwork : MonoBehaviour
     private void RPC_LoadedGameScene()
     {
         _PlayersInGame++;
+        print(PhotonNetwork.PlayerList.Length);
         if (_PlayersInGame == PhotonNetwork.PlayerList.Length)
         {
             _PhotonView.RPC("RPC_SpawnThePlayer", RpcTarget.All);
@@ -64,7 +64,6 @@ public class PlayerNetwork : MonoBehaviour
     [PunRPC]
     private void RPC_SpawnThePlayer()
     {
-        PhotonNetwork.Instantiate(_PlayertoSpawn.name, Vector3.zero, Quaternion.identity);
-        Debug.Log("hi");
+        PhotonNetwork.Instantiate(_PlayertoSpawn.name, Vector3.zero, Quaternion.identity);       
     }
 }
