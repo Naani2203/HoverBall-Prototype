@@ -1,4 +1,5 @@
 ﻿using Photon.Pun;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PlayerNetwork : MonoBehaviour
@@ -7,6 +8,8 @@ public class PlayerNetwork : MonoBehaviour
     public string PlayerName { get; private set; }
     private PhotonView _PhotonView;
     private int _PlayersInGame = 0;
+    [SerializeField]
+    private GameObject _PlayertoSpawn;
 
     private void Awake()
     {
@@ -32,7 +35,8 @@ public class PlayerNetwork : MonoBehaviour
     }
     private void MasterLoadedGame()
     {
-        _PlayersInGame = 1;
+        //_PhotonView.RPC("RPC_LoadedGameScene", RpcTarget.Others);
+        _PlayersInGame=1;
         _PhotonView.RPC("RPC_LoadGameOthers", RpcTarget.Others);
     }
     private void NonMasterLoadedGame()
@@ -45,13 +49,22 @@ public class PlayerNetwork : MonoBehaviour
     {
         PhotonNetwork.LoadLevel(1);
     }
+
     [PunRPC]
     private void RPC_LoadedGameScene()
     {
         _PlayersInGame++;
         if (_PlayersInGame == PhotonNetwork.PlayerList.Length)
         {
+            _PhotonView.RPC("RPC_SpawnThePlayer", RpcTarget.All);
             print("ALL PLAYERS ARE IN GAMESCENE");
         }
+    }
+
+    [PunRPC]
+    private void RPC_SpawnThePlayer()
+    {
+        PhotonNetwork.Instantiate(_PlayertoSpawn.name, Vector3.zero, Quaternion.identity);
+        Debug.Log("hi");
     }
 }
