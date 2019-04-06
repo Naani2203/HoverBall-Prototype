@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9062778141135535965}
   m_Layer: 9
   m_Name: MultiBallLauncher_01
-  m_TagString: Untagged
+  m_TagString: Level
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5685,7 +5685,7 @@ GameObject:
   - component: {fileID: 6814272018533098679}
   m_Layer: 9
   m_Name: MultiBallLauncher_03
-  m_TagString: Untagged
+  m_TagString: Level
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11369,7 +11369,7 @@ GameObject:
   - component: {fileID: 9023446139175583703}
   m_Layer: 9
   m_Name: BallLauncher_04 (1)
-  m_TagString: Untagged
+  m_TagString: Level
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16895,7 +16895,7 @@ GameObject:
   - component: {fileID: 4005811468818587665}
   m_Layer: 9
   m_Name: MultiBallLauncher_02
-  m_TagString: Untagged
+  m_TagString: Level
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22680,7 +22680,7 @@ GameObject:
   - component: {fileID: 7207795858416622105}
   m_Layer: 9
   m_Name: BallLauncher_03
-  m_TagString: Untagged
+  m_TagString: Level
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28375,10 +28375,9 @@ GameObject:
   - component: {fileID: 7207795858558681918}
   - component: {fileID: 7207795858558681917}
   - component: {fileID: 7207795858558681916}
-  - component: {fileID: 7207795858558681859}
   m_Layer: 9
   m_Name: Goal_01
-  m_TagString: Untagged
+  m_TagString: Level
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31955,20 +31954,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!64 &7207795858558681859
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7207795858558681858}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
 --- !u!1 &7207795858585243026
 GameObject:
   m_ObjectHideFlags: 0
@@ -31981,10 +31966,9 @@ GameObject:
   - component: {fileID: 7207795858585243022}
   - component: {fileID: 7207795858585243021}
   - component: {fileID: 7207795858585243020}
-  - component: {fileID: 7207795858585243027}
   m_Layer: 9
   m_Name: Goal_03
-  m_TagString: Untagged
+  m_TagString: Level
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31996,13 +31980,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7207795858585243026}
-  m_LocalRotation: {x: 0.69159687, y: -0, z: -0, w: 0.7222837}
+  m_LocalRotation: {x: 0.7051649, y: -0, z: -0, w: 0.7090434}
   m_LocalPosition: {x: 255.3, y: 5.9, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7906269660516854027}
   m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 89.687004, y: 0, z: 0}
 --- !u!33 &7207795858585243022
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -35561,20 +35545,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!64 &7207795858585243027
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7207795858585243026}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
 --- !u!1 &7207795858808304876
 GameObject:
   m_ObjectHideFlags: 0
@@ -35587,10 +35557,9 @@ GameObject:
   - component: {fileID: 7207795858808304872}
   - component: {fileID: 7207795858808304879}
   - component: {fileID: 7207795858808304878}
-  - component: {fileID: 7207795858808304877}
   m_Layer: 9
   m_Name: Goal_02
-  m_TagString: Untagged
+  m_TagString: Level
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39167,20 +39136,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!64 &7207795858808304877
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7207795858808304876}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
 --- !u!64 &7207795858998460835
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -39210,7 +39165,7 @@ GameObject:
   - component: {fileID: 7207795859173348167}
   m_Layer: 9
   m_Name: BallLauncher_01
-  m_TagString: Untagged
+  m_TagString: Level
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44877,10 +44832,9 @@ GameObject:
   - component: {fileID: 7207795859723489769}
   - component: {fileID: 7207795859723489768}
   - component: {fileID: 7207795859723489775}
-  - component: {fileID: 7207795859723489774}
   m_Layer: 9
   m_Name: Goal_04
-  m_TagString: Untagged
+  m_TagString: Level
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48457,20 +48411,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!64 &7207795859723489774
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7207795859723489773}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
 --- !u!64 &7207795859767815217
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -48500,7 +48440,7 @@ GameObject:
   - component: {fileID: 7207795859843911177}
   m_Layer: 9
   m_Name: BallLauncher_04
-  m_TagString: Untagged
+  m_TagString: Level
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54170,7 +54110,7 @@ GameObject:
   - component: {fileID: 7207795859943096474}
   m_Layer: 9
   m_Name: BallLauncher_02
-  m_TagString: Untagged
+  m_TagString: Level
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59865,7 +59805,7 @@ GameObject:
   - component: {fileID: 7207795860091979938}
   m_Layer: 9
   m_Name: Directional Light
-  m_TagString: Untagged
+  m_TagString: Level
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59937,7 +59877,7 @@ GameObject:
   - component: {fileID: 7207795860207066046}
   m_Layer: 9
   m_Name: BallLauncher_05
-  m_TagString: Untagged
+  m_TagString: Level
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65621,7 +65561,7 @@ GameObject:
   - component: {fileID: 6329032845700288905}
   m_Layer: 9
   m_Name: MultiBallLauncher_04
-  m_TagString: Untagged
+  m_TagString: Level
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71291,6 +71231,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e9c75cceb855ba240be4a0140f82ed73, type: 3}
+      propertyPath: m_TagString
+      value: Level
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e9c75cceb855ba240be4a0140f82ed73, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.2
@@ -71368,6 +71312,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: eeb2051befab87e45af161cda9ee3dc8, type: 3}
+      propertyPath: m_TagString
+      value: Level
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: eeb2051befab87e45af161cda9ee3dc8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 324.7
@@ -71422,15 +71370,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 3b44faaeb42223449b2b4385a360d99e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eeb2051befab87e45af161cda9ee3dc8, type: 3}
---- !u!4 &7207795858242781508 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: eeb2051befab87e45af161cda9ee3dc8,
-    type: 3}
-  m_PrefabInstance: {fileID: 7207795858242395076}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7207795858242297188 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: eeb2051befab87e45af161cda9ee3dc8,
+    type: 3}
+  m_PrefabInstance: {fileID: 7207795858242395076}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7207795858242781508 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: eeb2051befab87e45af161cda9ee3dc8,
     type: 3}
   m_PrefabInstance: {fileID: 7207795858242395076}
   m_PrefabAsset: {fileID: 0}
@@ -71454,7 +71402,7 @@ PrefabInstance:
     - target: {fileID: 572531348652160771, guid: a3c1a44fbe0fab44c9c2e7d6cd3ee661,
         type: 3}
       propertyPath: m_TagString
-      value: MovementAssist
+      value: Level
       objectReference: {fileID: 0}
     - target: {fileID: 5829545795162719952, guid: a3c1a44fbe0fab44c9c2e7d6cd3ee661,
         type: 3}
@@ -71540,6 +71488,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: caf90574687135648827771477b99945, type: 3}
+      propertyPath: m_TagString
+      value: Level
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: caf90574687135648827771477b99945, type: 3}
       propertyPath: m_LocalPosition.x
       value: 367.81
@@ -71617,6 +71569,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: caf90574687135648827771477b99945, type: 3}
+      propertyPath: m_TagString
+      value: Level
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: caf90574687135648827771477b99945, type: 3}
       propertyPath: m_LocalPosition.x
       value: 486.5
@@ -71667,15 +71623,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 3b44faaeb42223449b2b4385a360d99e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: caf90574687135648827771477b99945, type: 3}
---- !u!1 &7207795858529803291 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: caf90574687135648827771477b99945,
-    type: 3}
-  m_PrefabInstance: {fileID: 7207795858529770171}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7207795858529894459 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: caf90574687135648827771477b99945,
+    type: 3}
+  m_PrefabInstance: {fileID: 7207795858529770171}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7207795858529803291 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: caf90574687135648827771477b99945,
     type: 3}
   m_PrefabInstance: {fileID: 7207795858529770171}
   m_PrefabAsset: {fileID: 0}
@@ -71693,6 +71649,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 3b99bb54a1af82e4cabec8145123c2e7, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3b99bb54a1af82e4cabec8145123c2e7, type: 3}
+      propertyPath: m_TagString
+      value: Level
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3b99bb54a1af82e4cabec8145123c2e7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -71771,6 +71731,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 21aa7b5742cecda40b6878fb3b2b1301, type: 3}
+      propertyPath: m_TagString
+      value: Level
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 21aa7b5742cecda40b6878fb3b2b1301, type: 3}
       propertyPath: m_LocalPosition.x
       value: 398.1
@@ -71845,6 +71809,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: caf90574687135648827771477b99945, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: caf90574687135648827771477b99945, type: 3}
+      propertyPath: m_TagString
+      value: Level
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: caf90574687135648827771477b99945, type: 3}
       propertyPath: m_LocalPosition.x
@@ -71923,6 +71891,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: caf90574687135648827771477b99945, type: 3}
+      propertyPath: m_TagString
+      value: Level
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: caf90574687135648827771477b99945, type: 3}
       propertyPath: m_LocalPosition.x
       value: 486.5
@@ -71973,15 +71945,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 3b44faaeb42223449b2b4385a360d99e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: caf90574687135648827771477b99945, type: 3}
---- !u!1 &7207795859993713126 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: caf90574687135648827771477b99945,
-    type: 3}
-  m_PrefabInstance: {fileID: 7207795859993747270}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7207795859993609670 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: caf90574687135648827771477b99945,
+    type: 3}
+  m_PrefabInstance: {fileID: 7207795859993747270}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7207795859993713126 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: caf90574687135648827771477b99945,
     type: 3}
   m_PrefabInstance: {fileID: 7207795859993747270}
   m_PrefabAsset: {fileID: 0}
@@ -71999,6 +71971,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: eeb2051befab87e45af161cda9ee3dc8, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: eeb2051befab87e45af161cda9ee3dc8, type: 3}
+      propertyPath: m_TagString
+      value: Level
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: eeb2051befab87e45af161cda9ee3dc8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -72077,6 +72053,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: eeb2051befab87e45af161cda9ee3dc8, type: 3}
+      propertyPath: m_TagString
+      value: Level
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: eeb2051befab87e45af161cda9ee3dc8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 265.62
@@ -72153,6 +72133,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 0ead6307bcb0a8f4580fbe806a2c7df9, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0ead6307bcb0a8f4580fbe806a2c7df9, type: 3}
+      propertyPath: m_TagString
+      value: Level
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0ead6307bcb0a8f4580fbe806a2c7df9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -72234,7 +72218,7 @@ PrefabInstance:
     - target: {fileID: 6052123241498861110, guid: 83056c35dbe9e864db4bacf84c2d8d21,
         type: 3}
       propertyPath: m_TagString
-      value: MovementAssist
+      value: Level
       objectReference: {fileID: 0}
     - target: {fileID: 7834291990494102553, guid: 83056c35dbe9e864db4bacf84c2d8d21,
         type: 3}
@@ -72303,15 +72287,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 3b44faaeb42223449b2b4385a360d99e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83056c35dbe9e864db4bacf84c2d8d21, type: 3}
---- !u!1 &3030351063134067015 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6052123241498861110, guid: 83056c35dbe9e864db4bacf84c2d8d21,
-    type: 3}
-  m_PrefabInstance: {fileID: 8786679249751345009}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1533600158261920616 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7834291990494102553, guid: 83056c35dbe9e864db4bacf84c2d8d21,
+    type: 3}
+  m_PrefabInstance: {fileID: 8786679249751345009}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3030351063134067015 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6052123241498861110, guid: 83056c35dbe9e864db4bacf84c2d8d21,
     type: 3}
   m_PrefabInstance: {fileID: 8786679249751345009}
   m_PrefabAsset: {fileID: 0}
@@ -72335,7 +72319,7 @@ PrefabInstance:
     - target: {fileID: 4833007801409248886, guid: 114f113ddd0e6d84292a879e669d556b,
         type: 3}
       propertyPath: m_TagString
-      value: MovementAssist
+      value: Level
       objectReference: {fileID: 0}
     - target: {fileID: 863101336325900640, guid: 114f113ddd0e6d84292a879e669d556b,
         type: 3}
