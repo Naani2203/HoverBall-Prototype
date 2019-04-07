@@ -100,20 +100,20 @@ namespace NetworkPrototype
             DisableDrag();
         }
 
-       private void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-        {   
-            //if(stream.IsWriting)
-            //{
-            //    stream.SendNext(transform.position);
-            //    stream.SendNext(transform.rotation);
-            //}
-            //else
-            //{
-            //    _TargetPosition = (Vector3)stream.ReceiveNext();
-            //    _TargetRotation = (Quaternion)stream.ReceiveNext();
-            //}
+       //private void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+       // {   
+       //     //if(stream.IsWriting)
+       //     //{
+       //     //    stream.SendNext(transform.position);
+       //     //    stream.SendNext(transform.rotation);
+       //     //}
+       //     //else
+       //     //{
+       //     //    _TargetPosition = (Vector3)stream.ReceiveNext();
+       //     //    _TargetRotation = (Quaternion)stream.ReceiveNext();
+       //     //}
 
-        }
+       // }
 
         private void SmoothMove()
         {
