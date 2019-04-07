@@ -10,6 +10,7 @@ public class PlayerNetwork : MonoBehaviour
     private int _PlayersInGame = 0;
     [SerializeField]
     private GameObject _PlayertoSpawn;
+    public int TeamNumber=1;
 
     private void Awake()
     {
@@ -67,5 +68,13 @@ public class PlayerNetwork : MonoBehaviour
     private void RPC_SpawnThePlayer()
     {
         PhotonNetwork.Instantiate(_PlayertoSpawn.name, Vector3.zero, Quaternion.identity);       
+    }
+   
+    public void UpdateTeam()
+    {
+        if (TeamNumber == 1)
+            TeamNumber = 2;
+        else
+            TeamNumber = 1;
     }
 }

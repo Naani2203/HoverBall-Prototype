@@ -9,6 +9,7 @@ namespace NetworkPrototype
 
 
     [RequireComponent(typeof(Rigidbody))]
+    [RequireComponent(typeof(TintMaterial))]
     public class PlayerMovement : PlayerUnit
     {
         [Header("Movement")]
@@ -61,7 +62,10 @@ namespace NetworkPrototype
         private PhotonView _PhotonView;
         private Vector3 _TargetPosition;
         private Quaternion _TargetRotation;
-        
+        private int _TeamNumber;
+        [SerializeField]
+        private float _Emission = 15f;
+
 
         private void Awake()
         {
@@ -73,6 +77,15 @@ namespace NetworkPrototype
            
         
         }
+
+        private void Start()
+        {
+            if(photonView.IsMine)
+            {
+                photonView.RPC("RPC_SetTeam", RpcTarget.MasterClient);
+            }
+        }
+
         private void Update()
         {
             if(_PhotonView.IsMine)
@@ -82,6 +95,7 @@ namespace NetworkPrototype
                 _IsGrounded = ReadGround();           
                 CheckDashDelay();
                _MoveAssist.RotateToGround();
+                AssignTeamColors();
             }
             else
             {
@@ -214,6 +228,31 @@ namespace NetworkPrototype
             {
                 _RB.drag = _Drag;
                 _RB.angularDrag = _AngularDrag;
+            }
+        }
+
+        [PunRPC]
+        private void RPC_SetTeam()
+        {
+            _TeamNumber = PlayerNetwork.Instance.TeamNumber;
+            PlayerNetwork.Instance.UpdateTeam();
+            photonView.RPC("RPC_SendTeam", RpcTarget.OthersBuffered, _TeamNumber);
+        }
+
+        [PunRPC]
+        private void RPC_SendTeam(int team)
+        {
+            _TeamNumber = team;
+        }
+        private void AssignTeamColors()
+        {
+            if(_TeamNumber==1)
+            {
+                GetComponent<TintMaterial>().ApplyTintToMaterials(Color.blue, _Emission);
+            }
+            if (_TeamNumber == 2)
+            {
+                GetComponent<TintMaterial>().ApplyTintToMaterials(Color.red, _Emission);
             }
         }
     }
