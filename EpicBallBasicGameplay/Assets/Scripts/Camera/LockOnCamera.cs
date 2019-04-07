@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using Photon.Pun;
 using UnityEngine;
 
 namespace NetworkPrototype
 {
-    public class LockOnCamera : MonoBehaviour
+    public class LockOnCamera : MonoBehaviourPun
     {
         [SerializeField]
         private GameObject _VirtualCamera;
@@ -24,8 +25,12 @@ namespace NetworkPrototype
         void Awake()
         {
             _TargetGroup = GetComponentInChildren<CinemachineTargetGroup>();
-            _Targets[1].target = this.gameObject.transform;
             _MyTeam = GetComponentInChildren<PlayerMovement>()._TeamNumber;
+            if(photonView.IsMine)
+            {
+            _Targets[1].target = this.gameObject.transform;
+
+            }
         }
 
         void Update()
