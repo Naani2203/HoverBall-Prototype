@@ -65,6 +65,7 @@ namespace NetworkPrototype
         private int _TeamNumber;
         [SerializeField]
         private float _Emission = 15f;
+       
 
 
         private void Awake()
@@ -83,6 +84,7 @@ namespace NetworkPrototype
             if(photonView.IsMine)
             {
                 photonView.RPC("RPC_SetTeam", RpcTarget.MasterClient);
+               
             }
         }
 
@@ -95,13 +97,13 @@ namespace NetworkPrototype
                 _IsGrounded = ReadGround();           
                 CheckDashDelay();
                _MoveAssist.RotateToGround();
-                AssignTeamColors();
             }
             else
             {
                 //SmoothMove();
                 Destroy(GetComponentInChildren<Cinemachine.CinemachineVirtualCamera>());
             }
+                AssignTeamColors();
         }
 
         private void FixedUpdate()

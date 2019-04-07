@@ -13,12 +13,17 @@
         {
             foreach (var item in _ToTint)
             {
+            if(item!=null)
                 item.material.color = color;
             }
             foreach (var item in _Emmisives)
             {
-                item.materials[1].color = color;
-                item.materials[1].SetColor("_EmissionColor", color * Mathf.LinearToGammaSpace(emmision));
+                if (item != null)
+                {
+                    item.materials[1].color = color;
+                    item.materials[1].SetColor("_EmissionColor", color * Mathf.LinearToGammaSpace(emmision));
+                }
+
             }
         }
 
