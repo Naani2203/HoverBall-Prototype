@@ -58,6 +58,9 @@ namespace NetworkPrototype
         private float _AngularDrag;
         private float _Drag;
 
+        private PhotonView _PhotonView;
+        private Vector3 _TargetPosition;
+        private Quaternion _TargetRotation;
         
 
         private void Awake()
@@ -66,25 +69,56 @@ namespace NetworkPrototype
             _AngularDrag = _RB.angularDrag;
             _Drag = _RB.drag;
             _Player = GetComponent<Player>();
+            _PhotonView = GetComponent<PhotonView>();
+            PhotonNetwork.SendRate = 25;
+            PhotonNetwork.SerializationRate = 15;
         
         }
         private void Update()
         {
-            ReadInput();
-            AngularMovement();
-            _IsGrounded = ReadGround();           
-            CheckDashDelay();
-           _MoveAssist.RotateToGround();
+            if(_PhotonView.IsMine)
+            {
+                ReadInput();
+                AngularMovement();
+                _IsGrounded = ReadGround();           
+                CheckDashDelay();
+               _MoveAssist.RotateToGround();
+            }
+            else
+            {
+                SmoothMove();
+            }
         }
 
         private void FixedUpdate()
         {
-            if (_IsGrounded == true)
+            if (_IsGrounded == true && _PhotonView.IsMine)
             {
                 ApplyMovePhysics();
                 Dash();
             }
             DisableDrag();
+        }
+
+       private void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+        {   
+            if(stream.IsWriting)
+            {
+                stream.SendNext(transform.position);
+                stream.SendNext(transform.rotation);
+            }
+            else
+            {
+                _TargetPosition = (Vector3)stream.ReceiveNext();
+                _TargetRotation = (Quaternion)stream.ReceiveNext();
+            }
+
+        }
+
+        private void SmoothMove()
+        {
+            transform.position = Vector3.Lerp(transform.position, _TargetPosition, 0.7f);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, _TargetRotation, 500 * Time.deltaTime);
         }
 
         private void ReadInput()
