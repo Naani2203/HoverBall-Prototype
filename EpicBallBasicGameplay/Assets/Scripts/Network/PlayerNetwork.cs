@@ -17,6 +17,8 @@ public class PlayerNetwork : MonoBehaviour
         PlayerName = "RandomPlayer#" + Random.Range(1, 9999);
         _PhotonView = GetComponent<PhotonView>();
         SceneManager.sceneLoaded += OnSceneLoaded;
+        PhotonNetwork.SendRate = 25;
+        PhotonNetwork.SerializationRate = 15;
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
