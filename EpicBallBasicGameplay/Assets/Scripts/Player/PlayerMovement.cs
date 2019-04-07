@@ -85,7 +85,7 @@ namespace NetworkPrototype
             }
             else
             {
-                SmoothMove();
+                //SmoothMove();
                 Destroy(GetComponentInChildren<Cinemachine.CinemachineVirtualCamera>());
             }
         }
@@ -97,27 +97,28 @@ namespace NetworkPrototype
                 ApplyMovePhysics();
                 Dash();
             }
+            if(_PhotonView.IsMine)
             DisableDrag();
         }
 
-       //private void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-       // {   
-       //     //if(stream.IsWriting)
-       //     //{
-       //     //    stream.SendNext(transform.position);
-       //     //    stream.SendNext(transform.rotation);
-       //     //}
-       //     //else
-       //     //{
-       //     //    _TargetPosition = (Vector3)stream.ReceiveNext();
-       //     //    _TargetRotation = (Quaternion)stream.ReceiveNext();
-       //     //}
+        private void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+        {
+            if (stream.IsWriting)
+            {
+                stream.SendNext(transform.position);
+                stream.SendNext(transform.rotation);
+            }
+            else
+            {
+                _TargetPosition = (Vector3)stream.ReceiveNext();
+                _TargetRotation = (Quaternion)stream.ReceiveNext();
+            }
 
-       // }
+        }
 
         private void SmoothMove()
         {
-            transform.position = Vector3.Lerp(transform.position, _TargetPosition, 0.7f);
+            transform.position = Vector3.Lerp(transform.position, _TargetPosition, 0.25f);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, _TargetRotation, 500 * Time.deltaTime);
         }
 
