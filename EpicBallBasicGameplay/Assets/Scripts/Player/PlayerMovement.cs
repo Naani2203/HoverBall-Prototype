@@ -87,6 +87,7 @@ namespace NetworkPrototype
             else
             {
                 SmoothMove();
+                Destroy(GetComponentInChildren<Cinemachine.CinemachineVirtualCamera>());
             }
         }
 

@@ -902,6 +902,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 181}
     m_Modifications:
+    - target: {fileID: 100020, guid: 44697fc6bd1672148b21daab86272a26, type: 3}
+      propertyPath: m_Name
+      value: Robot1_CatchBall_Anim
+      objectReference: {fileID: 0}
     - target: {fileID: 400020, guid: 44697fc6bd1672148b21daab86272a26, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.09729731
@@ -957,10 +961,6 @@ PrefabInstance:
     - target: {fileID: 400020, guid: 44697fc6bd1672148b21daab86272a26, type: 3}
       propertyPath: m_LocalScale.z
       value: 1.1768142
-      objectReference: {fileID: 0}
-    - target: {fileID: 100020, guid: 44697fc6bd1672148b21daab86272a26, type: 3}
-      propertyPath: m_Name
-      value: Robot1_CatchBall_Anim
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44697fc6bd1672148b21daab86272a26, type: 3}
