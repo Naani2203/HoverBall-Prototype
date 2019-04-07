@@ -4,21 +4,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+
 namespace NetworkPrototype
 {
-
-
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(TintMaterial))]
     public class PlayerMovement : PlayerUnit
     {
         [Header("Movement")]
         [SerializeField]
-        private float _Speed=0f;
+        private float _Speed = 0f;
         [SerializeField]
-        private float _MaxSpeed=0f;
+        private float _MaxSpeed = 0f;
         [SerializeField]
-        private float _RotationValue=0f;
+        private float _RotationValue = 0f;
         [SerializeField]
         private float _InitialSpeedDivider;
         [SerializeField]
@@ -54,7 +53,7 @@ namespace NetworkPrototype
         private bool _IsGrounded;
         private float _TempRot;
         private bool _CanUturn;
-        private bool _CanDash=true;
+        private bool _CanDash = true;
         private float _Delay = 0;
         private float _AngularDrag;
         private float _Drag;
@@ -62,10 +61,11 @@ namespace NetworkPrototype
         private PhotonView _PhotonView;
         private Vector3 _TargetPosition;
         private Quaternion _TargetRotation;
-        private int _TeamNumber;
+        public int _TeamNumber;
         [SerializeField]
         private float _Emission = 15f;
-       
+        private Cinemachine.CinemachineVirtualCamera[] _VirtualCameras;
+
 
 
         private void Awake()
@@ -75,35 +75,41 @@ namespace NetworkPrototype
             _Drag = _RB.drag;
             _Player = GetComponent<Player>();
             _PhotonView = GetComponent<PhotonView>();
-           
-        
+            _VirtualCameras = GetComponentsInChildren<Cinemachine.CinemachineVirtualCamera>();
+
+
         }
 
         private void Start()
         {
-            if(photonView.IsMine)
+            if (photonView.IsMine)
             {
                 photonView.RPC("RPC_SetTeam", RpcTarget.MasterClient);
-               
+
+            }
+            else
+            {
+               foreach(Cinemachine.CinemachineVirtualCamera camera in _VirtualCameras)
+                {
+                    Destroy(camera);
+                }
+                Destroy(GetComponentInChildren<LockOnCamera>());
+
             }
         }
 
         private void Update()
         {
-            if(_PhotonView.IsMine)
+            if (_PhotonView.IsMine)
             {
                 ReadInput();
                 AngularMovement();
-                _IsGrounded = ReadGround();           
+                _IsGrounded = ReadGround();
                 CheckDashDelay();
-               _MoveAssist.RotateToGround();
+                _MoveAssist.RotateToGround();
             }
-            else
-            {
-                //SmoothMove();
-                Destroy(GetComponentInChildren<Cinemachine.CinemachineVirtualCamera>());
-            }
-                AssignTeamColors();
+
+            AssignTeamColors();
         }
 
         private void FixedUpdate()
@@ -113,8 +119,8 @@ namespace NetworkPrototype
                 ApplyMovePhysics();
                 Dash();
             }
-            if(_PhotonView.IsMine)
-            DisableDrag();
+            if (_PhotonView.IsMine)
+                DisableDrag();
         }
 
         private void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
@@ -151,29 +157,29 @@ namespace NetworkPrototype
 
         private void ApplyMovePhysics()
         {
-            if (Input.GetAxis("Fire1")>0&&_IsGrounded==true)
+            if (Input.GetAxis("Fire1") > 0 && _IsGrounded == true)
             {
                 Debug.Log("Dash");
-                if (_RB.velocity.sqrMagnitude < (_MaxSpeed ) * (_MaxSpeed ))
+                if (_RB.velocity.sqrMagnitude < (_MaxSpeed) * (_MaxSpeed))
                 {
-                    _RB.AddForce(_Force);                            
+                    _RB.AddForce(_Force);
                 }
             }
             else
             {
                 ApplyInitialMovement();
-            }        
+            }
         }
 
         private void ApplyInitialMovement()
         {
-            if(_RB.velocity.sqrMagnitude < (_MaxSpeed/_InitialSpeedDivider)* (_MaxSpeed / _InitialSpeedDivider)&&_IsGrounded==true)
-            _RB.AddForce(_Force);            
+            if (_RB.velocity.sqrMagnitude < (_MaxSpeed / _InitialSpeedDivider) * (_MaxSpeed / _InitialSpeedDivider) && _IsGrounded == true)
+                _RB.AddForce(_Force);
         }
 
         private void AngularMovement()
-        {            
-             transform.Rotate(Vector3.up * _HorizontalAxis * _RotationValue );  
+        {
+            transform.Rotate(Vector3.up * _HorizontalAxis * _RotationValue);
         }
 
         private bool ReadGround()
@@ -181,7 +187,7 @@ namespace NetworkPrototype
             Collider[] _Colliders = Physics.OverlapSphere(_Ground.position, _GroundRadius);
             for (int i = 0; i < _Colliders.Length; i++)
             {
-                if (_Colliders.Length > 1 && _Colliders[i].tag =="Level")
+                if (_Colliders.Length > 1 && _Colliders[i].tag == "Level")
                 {
                     return true;
                 }
@@ -191,21 +197,21 @@ namespace NetworkPrototype
         }
         private void DoAUturn()
         {
-           if(Input.GetButtonDown("Fire2"))
+            if (Input.GetButtonDown("Fire2"))
             {
                 _RB.AddForce(Vector3.up * _UturnForce);
-                transform.Rotate(Vector3.right * Mathf.Lerp(_TempRot,_TempRot+180,0.5f));
+                transform.Rotate(Vector3.right * Mathf.Lerp(_TempRot, _TempRot + 180, 0.5f));
             }
-        } 
+        }
 
         private void Dash()
         {
-            if(_CanDash==true && Input.GetButtonDown("Fire2"))
+            if (_CanDash == true && Input.GetButtonDown("Fire2"))
             {
-                _RB.AddForce(transform.forward * _DashForce,ForceMode.Impulse);
+                _RB.AddForce(transform.forward * _DashForce, ForceMode.Impulse);
                 _CanDash = false;
             }
-            if(_CanDash==false)
+            if (_CanDash == false)
             {
                 _Delay += Time.deltaTime;
 
@@ -213,7 +219,7 @@ namespace NetworkPrototype
         }
         private void CheckDashDelay()
         {
-            if(_Delay>=_DashDelayTime)
+            if (_Delay >= _DashDelayTime)
             {
                 _CanDash = true;
                 _Delay = 0;
@@ -221,7 +227,7 @@ namespace NetworkPrototype
         }
         private void DisableDrag()
         {
-            if(_IsGrounded==false)
+            if (_IsGrounded == false)
             {
                 _RB.drag = 0;
                 _RB.angularDrag = 0;
@@ -248,7 +254,7 @@ namespace NetworkPrototype
         }
         private void AssignTeamColors()
         {
-            if(_TeamNumber==1)
+            if (_TeamNumber == 1)
             {
                 GetComponent<TintMaterial>().ApplyTintToMaterials(Color.blue, _Emission);
             }
@@ -259,3 +265,4 @@ namespace NetworkPrototype
         }
     }
 }
+
