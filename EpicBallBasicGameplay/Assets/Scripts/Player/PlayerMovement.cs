@@ -70,8 +70,7 @@ namespace NetworkPrototype
             _Drag = _RB.drag;
             _Player = GetComponent<Player>();
             _PhotonView = GetComponent<PhotonView>();
-            PhotonNetwork.SendRate = 25;
-            PhotonNetwork.SerializationRate = 15;
+           
         
         }
         private void Update()
@@ -103,16 +102,16 @@ namespace NetworkPrototype
 
        private void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
         {   
-            if(stream.IsWriting)
-            {
-                stream.SendNext(transform.position);
-                stream.SendNext(transform.rotation);
-            }
-            else
-            {
-                _TargetPosition = (Vector3)stream.ReceiveNext();
-                _TargetRotation = (Quaternion)stream.ReceiveNext();
-            }
+            //if(stream.IsWriting)
+            //{
+            //    stream.SendNext(transform.position);
+            //    stream.SendNext(transform.rotation);
+            //}
+            //else
+            //{
+            //    _TargetPosition = (Vector3)stream.ReceiveNext();
+            //    _TargetRotation = (Quaternion)stream.ReceiveNext();
+            //}
 
         }
 
