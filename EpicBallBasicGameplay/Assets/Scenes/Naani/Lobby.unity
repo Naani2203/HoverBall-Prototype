@@ -269,7 +269,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 194918412}
-  m_LocalRotation: {x: 0.15756287, y: 0.000000029430064, z: -0.000000004695742, w: 0.98750895}
+  m_LocalRotation: {x: 0.15756288, y: 0.0000000049459423, z: -7.8915563e-10, w: 0.98750895}
   m_LocalPosition: {x: 0, y: 20.7392, z: -17.4527}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1139,7 +1139,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000059040856, y: -0.00012994169}
+  m_AnchoredPosition: {x: -0.000070048125, y: -0.000026465561}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &948740953
@@ -1307,7 +1307,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00006954952, y: 0.0000487502}
+  m_AnchoredPosition: {x: -0.000017353559, y: 0.000064360735}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &978672819
@@ -2238,6 +2238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _PlayertoSpawn: {fileID: 39, guid: 6936d14bd466bde4e81951cdcafd7fc9, type: 3}
+  _EpicBall: {fileID: 382, guid: 17e72a4e2d13857468ba487f11ba34c3, type: 3}
   TeamNumber: 1
 --- !u!114 &1811707823
 MonoBehaviour:

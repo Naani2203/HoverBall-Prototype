@@ -76,7 +76,10 @@ namespace NetworkPrototype
             _Player = GetComponent<Player>();
             _PhotonView = GetComponent<PhotonView>();
             _VirtualCameras = GetComponentsInChildren<Cinemachine.CinemachineVirtualCamera>();
-
+            if(PhotonNetwork.IsMasterClient)
+            {
+                PlayerNetwork.Instance.SpawnBall();
+            }
 
         }
 
@@ -194,14 +197,6 @@ namespace NetworkPrototype
 
             }
             return false;
-        }
-        private void DoAUturn()
-        {
-            if (Input.GetButtonDown("Fire2"))
-            {
-                _RB.AddForce(Vector3.up * _UturnForce);
-                transform.Rotate(Vector3.right * Mathf.Lerp(_TempRot, _TempRot + 180, 0.5f));
-            }
         }
 
         private void Dash()

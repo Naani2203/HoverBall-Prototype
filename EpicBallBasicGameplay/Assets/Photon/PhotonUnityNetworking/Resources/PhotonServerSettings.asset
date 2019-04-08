@@ -35,5 +35,8 @@ MonoBehaviour:
   - RPC_SpawnThePlayer
   - RPC_SendTeam
   - RPC_SetTeam
+  - RPC_BlueScore
+  - RPC_RedScore
+  - RPC_UpdateScore
   DisableAutoOpenWizard: 1
   ShowSettings: 0

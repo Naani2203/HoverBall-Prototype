@@ -10,6 +10,8 @@ public class PlayerNetwork : MonoBehaviour
     private int _PlayersInGame = 0;
     [SerializeField]
     private GameObject _PlayertoSpawn;
+    [SerializeField]
+    private EpicBall _EpicBall;
     public int TeamNumber=1;
 
     private void Awake()
@@ -76,5 +78,9 @@ public class PlayerNetwork : MonoBehaviour
             TeamNumber = 2;
         else
             TeamNumber = 1;
+    }
+    public void SpawnBall()
+    {
+        PhotonNetwork.Instantiate(_EpicBall.name, Vector3.zero, Quaternion.identity);
     }
 }
