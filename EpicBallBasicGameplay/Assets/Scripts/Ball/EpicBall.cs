@@ -20,6 +20,7 @@ public class EpicBall : MonoBehaviourPun
         if(collision.collider.CompareTag("Player") && collision.gameObject.GetComponent<ShootTheBall>()._HaveBall == false)
         {
             collision.gameObject.GetComponent<ShootTheBall>()._HaveBall = true;
+            if(PhotonNetwork.IsMasterClient)
             photonView.RPC("RPC_DestroyBall", RpcTarget.All);
         }
     }

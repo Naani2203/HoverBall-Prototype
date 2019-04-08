@@ -41,13 +41,15 @@ namespace NetworkPrototype
         private void BlueScore()
         {
             _Score.BlueScore++;
+            if(PhotonNetwork.IsMasterClient)
             _Score.photonView.RPC("RPC_UpdateScore", RpcTarget.AllBuffered, _Score.BlueScore, _Score.RedScore);
         }
   
         private void RedScore()
         {
             _Score.RedScore++;
-            _Score.photonView.RPC("RPC_UpdateScore", RpcTarget.AllBuffered, _Score.BlueScore, _Score.RedScore);
+            if (PhotonNetwork.IsMasterClient)
+                _Score.photonView.RPC("RPC_UpdateScore", RpcTarget.AllBuffered, _Score.BlueScore, _Score.RedScore);
         }
     }
 }
