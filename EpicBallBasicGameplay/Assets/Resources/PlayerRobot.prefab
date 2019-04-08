@@ -317,7 +317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ShootPosition: {fileID: 195}
   _EpicBallHolder: {fileID: 8150853813954088695}
-  _EpicBall: {fileID: 1217, guid: 17e72a4e2d13857468ba487f11ba34c3, type: 3}
+  _EpicBall: {fileID: 382, guid: 17e72a4e2d13857468ba487f11ba34c3, type: 3}
   _BallForce: 300
   _HaveBall: 0
 --- !u!114 &373
@@ -799,7 +799,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 48}
-  m_LocalRotation: {x: 0.1575629, y: 0.000000020368542, z: -0.0000000032499228, w: 0.98750895}
+  m_LocalRotation: {x: 0.15756287, y: 0.000000029430064, z: -0.000000004695741, w: 0.98750895}
   m_LocalPosition: {x: 0, y: 31.370003, z: -2.454}
   m_LocalScale: {x: 0.5405406, y: 6.25, z: 0.1980198}
   m_Children:

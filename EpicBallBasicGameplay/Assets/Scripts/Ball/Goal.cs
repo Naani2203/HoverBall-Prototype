@@ -13,7 +13,7 @@ namespace NetworkPrototype
     
         private void OnTriggerEnter(Collider other)
         {
-            if(other.CompareTag("Player"))
+            if(other.CompareTag("Player") && other.GetComponent<ShootTheBall>()._HaveBall)
             {
             
                if(other.GetComponent<PlayerMovement>()._TeamNumber==1)
@@ -37,15 +37,13 @@ namespace NetworkPrototype
                 }
             }
         }
-
       
         private void BlueScore()
         {
             _Score.BlueScore++;
             _Score.photonView.RPC("RPC_UpdateScore", RpcTarget.AllBuffered, _Score.BlueScore, _Score.RedScore);
         }
-
-     
+  
         private void RedScore()
         {
             _Score.RedScore++;

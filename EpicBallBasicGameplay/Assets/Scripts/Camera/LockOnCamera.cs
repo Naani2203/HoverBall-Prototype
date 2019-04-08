@@ -37,8 +37,8 @@ namespace NetworkPrototype
         {
             if (Input.GetButton(_AxisName) && _VirtualCamera != null)
             {
-                _VirtualCamera.SetActive(true);
-                _Targets[0].target = FindTeamMate();
+                //_VirtualCamera.SetActive(true);
+                //_Targets[0].target = FindTeamMate();
             }
 
             else
