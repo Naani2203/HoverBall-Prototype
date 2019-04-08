@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EpicBall : MonoBehaviour
+public class EpicBall : MonoBehaviourPun
 {
     [SerializeField]
     private Rigidbody _RB;
@@ -20,7 +20,12 @@ public class EpicBall : MonoBehaviour
         if(collision.collider.CompareTag("Player") && collision.gameObject.GetComponent<ShootTheBall>()._HaveBall == false)
         {
             collision.gameObject.GetComponent<ShootTheBall>()._HaveBall = true;
-            PhotonNetwork.Destroy(this.gameObject);
+            photonView.RPC("RPC_DestroyBall", RpcTarget.All);
         }
+    }
+    [PunRPC]
+    private void RPC_DestroyBall()
+    {
+        Destroy(this.gameObject);
     }
 }

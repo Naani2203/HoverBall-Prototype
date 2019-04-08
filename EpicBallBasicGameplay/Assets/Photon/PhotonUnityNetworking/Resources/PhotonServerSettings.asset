@@ -38,5 +38,6 @@ MonoBehaviour:
   - RPC_BlueScore
   - RPC_RedScore
   - RPC_UpdateScore
+  - RPC_DestroyBall
   DisableAutoOpenWizard: 1
   ShowSettings: 0
