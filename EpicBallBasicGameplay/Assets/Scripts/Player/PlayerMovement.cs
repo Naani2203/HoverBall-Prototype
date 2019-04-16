@@ -151,8 +151,8 @@ namespace NetworkPrototype
         {
             _VerticalAxis = Input.GetAxis("Vertical");
             _HorizontalAxis = Input.GetAxis("Horizontal");
-            _CamPosition = _Camera.position;
-            _CamPosition.y = transform.position.y;
+            //_CamPosition = _Camera.position;
+            //_CamPosition.y = transform.position.y;
             _Forward = transform.position - _CamPosition;
             _Forward.y = _RB.velocity.y;
             _Force = transform.forward * _Speed;
