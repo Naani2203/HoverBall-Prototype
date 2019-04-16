@@ -207,6 +207,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _FollowCamera: {fileID: 2874992824372701173, guid: 76fd46239fa91404b94ebf813b9cef03,
     type: 3}
+  _FollowLerp: {fileID: 3193052659425880303, guid: 0ce7ea38582121c45bba2cf7784f0814,
+    type: 3}
   _FollowPoint: {fileID: 2143516323607980428}
   _LookAtPoint: {fileID: 6946582274888009012}
 --- !u!54 &327
@@ -248,7 +250,7 @@ MonoBehaviour:
   _FloatingHeight: 0
   _UturnForce: 0
   _DashDelayTime: 2
-  _DashForce: 7000
+  _DashForce: 20000
   _MoveAssist: {fileID: 356}
   _TeamNumber: 0
   _Emission: 15
@@ -318,8 +320,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ab61a788e2f1164faf8b673f7a6ae13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _MaxRayDistance: 1000
-  _AngleToRotate: 10
+  _MaxRayDistance: 100
+  _AngleToRotate: 7
   _Layer: 9
 --- !u!114 &365
 MonoBehaviour:
@@ -335,7 +337,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ShootPosition: {fileID: 193}
   _EpicBallHolder: {fileID: 8150853813954088695}
-  _EpicBall: {fileID: 0}
+  _EpicBall: {fileID: 381, guid: 17e72a4e2d13857468ba487f11ba34c3, type: 3}
   _BallForce: 300
   _HaveBall: 0
 --- !u!114 &366
@@ -924,7 +926,7 @@ PrefabInstance:
     - target: {fileID: 8290302907355072269, guid: 4cc0688f67f1ea043bd093eb97d53d62,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.26
+      value: 38.6
       objectReference: {fileID: 0}
     - target: {fileID: 8290302907355072269, guid: 4cc0688f67f1ea043bd093eb97d53d62,
         type: 3}

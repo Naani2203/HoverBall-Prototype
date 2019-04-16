@@ -6,6 +6,7 @@ TagManager:
   tags:
   - MovementAssist
   - Level
+  - FollowVector
   layers:
   - Default
   - TransparentFX
