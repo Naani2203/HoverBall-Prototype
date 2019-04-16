@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon;
+using Photon.Pun;
 
-public class CreateFollowCam : MonoBehaviour
+public class CreateFollowCam : MonoBehaviourPunCallbacks
 {
     [SerializeField]
     private GameObject _FollowCamera;
@@ -17,17 +19,22 @@ public class CreateFollowCam : MonoBehaviour
 
     private void Awake()
     {
-        Instantiate(_FollowCamera, transform.position, Quaternion.identity);
-        Instantiate(_FollowLerp, transform.position, Quaternion.identity);
-        _CameraInScene = GameObject.FindGameObjectWithTag("MainCamera");
-        _FollowLerpInScene = GameObject.FindGameObjectWithTag("FollowVector");
+        if(photonView.IsMine==true)
+        {
+            Instantiate(_FollowCamera, transform.position, Quaternion.identity);
+            Instantiate(_FollowLerp, transform.position, Quaternion.identity);
+            _CameraInScene = GameObject.FindGameObjectWithTag("MainCamera");
+            _FollowLerpInScene = GameObject.FindGameObjectWithTag("FollowVector");
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        _FollowLerpInScene.GetComponent<CameraFollow>().FollowLookAtPoint(_LookAtPoint);
+        if(_FollowLerpInScene != null && _CameraInScene != null)
+        {
+            _FollowLerpInScene.GetComponent<CameraFollow>().FollowLookAtPoint(_LookAtPoint);
             _CameraInScene.GetComponent<CameraFollow>().FollowCameraPoint(_FollowPoint,_FollowLerpInScene.transform);
+        }
     }
 }
